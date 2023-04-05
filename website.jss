@@ -1,8 +1,3 @@
-sss.html:22     GET file:///C:/Users/Administrator/Desktop/script.js net::ERR_FILE_NOT_FOUND
-s
-VM240:1 Uncaught ReferenceError: s is not defined
-    at <anonymous>:1:1
-(anonymous) @ VM240:1
 const ServerUrl = "127.0.0.1";
 const serverPassword = "2FuB7";
 
@@ -109,4 +104,3 @@ function warp(botName) {
 
 updateList();
 setInterval(updateList, 1000);
-1
