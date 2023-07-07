@@ -1,5 +1,5 @@
 const ServerUrl = "127.0.0.1";
-const serverPassword = "2FuB7";
+const serverPassword = "IAvc7";
 
 function isJsonString(str) {
   try {
@@ -45,11 +45,14 @@ const BotStatus = [
   "SERVER OVERLOADED",
   "Bypass Tutorial",
 ];
-
+async function cleanMemory() {
+await requestAPI("clearCache", {
+});
+}
 async function updateList() {
   const response1 = await requestAPI("runScript", {
     script: `
-      for k, v in pairs(getAllBot) do
+      for k, v in pairs(getAllBot()) do
         ping = v:getMs()
         world = v:getCurrentWorld()
         status = v:getBotStatus()
@@ -104,3 +107,4 @@ function warp(botName) {
 
 updateList();
 setInterval(updateList, 1000);
+setInterval(cleanMemory, 10000);
